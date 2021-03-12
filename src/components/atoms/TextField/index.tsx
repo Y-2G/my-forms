@@ -6,19 +6,27 @@ import { Controller } from 'react-hook-form'
 
 export type TextFieldProps = {
     name: string
-    control: Control,
+    control: Control
 } & MuiTextFieldProps
 
 const TextField: React.FC<TextFieldProps> = ({
     name,
     control,
+    error,
+    helperText,
     ...props
 }: TextFieldProps) => {
     return (
         <Controller
             name={name}
             control={control}
-            as={<MuiTextField {...props} />}
+            as={
+                <MuiTextField
+                    {...props}
+                    multiline={false}
+                    error={error}
+                    helperText={error ? helperText : ''}
+                />}
         />
     )
 }

@@ -26,4 +26,6 @@ Default.args = {
     variant: 'outlined',
     fullWidth: true,
     disabled: false,
+    error: false,
+    helperText: 'This field is required'
 }
